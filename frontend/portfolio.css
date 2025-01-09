@@ -1,0 +1,813 @@
+/* Added the universal selector (*) */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Slab", serif;
+    scroll-behavior: smooth;
+    /* color: white; */
+}
+
+html {
+    overflow: hidden;
+    
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Navbar Styling */
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    background-color: #000000;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* .nav-logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+} */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+   
+}
+
+.nav-links li a:hover {
+    color: #49AF73;
+}
+
+/* Hamburger Menu (Hidden by Default) */
+.hamburger-menu {
+    display: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+
+
+
+.name-profile {
+    background-image: url(pexels-imudruk-11114651.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 533.78px;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff; 
+    padding-bottom: 80px;
+    align-items: center;
+    justify-content: center;
+   
+}
+.name-profile-detail
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.name-softdev h1{
+    /* height: 300px;*/
+  
+    font-size: 6rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.social-media
+{ 
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-media i {
+    transform: scale(2);
+    /* margin-left: 2rem; */
+    color: #ffffff; 
+    line-height: 3;
+    transition:  0.2s ease-in-out;
+    
+}
+.social-media i:hover
+{
+  transform: scale(2.2);
+ color:#49AF73;
+}
+@media (max-width:545px) {
+    .name-softdev h1 
+    {
+        font-size: 3.5rem;
+    }
+    .name-softdev h2
+    {
+        font-size: 24px;
+    }
+    .name-profile
+    {
+        height: 350px;
+    }
+    .social-media 
+    {
+       position: relative;
+       top: 50px;
+    }
+}
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.name-profile h1:nth-child(1) { /* "Abhinav" */
+    animation: slideFromLeft 1.5s ease-out;
+}
+
+.name-profile h1:nth-child(2) { /* "Srivastava" */
+    animation: slideFromRight 1.5s ease-out;
+}
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #fff;
+    }
+    100% {
+        border-color: transparent;
+       
+    }
+}
+
+.name-profile h2 {
+    overflow: hidden; 
+    white-space: nowrap;
+    border-right: 1px solid #49AF73; /* cursor effect */
+    width: 0;
+    
+    animation: typing 3s steps(20) 1s forwards, blink 0.75s step-end infinite;
+}
+
+/* Existing .about-me styles */
+.about-me {
+    width: 100vw;
+    
+    background-color: #ffffff;
+    padding: 4rem 4rem 2rem 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Vertically center the child elements */
+    flex-wrap: wrap; /* Allow child elements to wrap on smaller screens */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Child elements */
+.description, .picture {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.description h1 {
+    color: #49AF73;
+    font-size: 3rem;
+    width: 60%;
+    text-align: left; /* Center align on smaller screens */
+}
+
+.description p {
+    color: #425475;
+    text-align: left;
+    margin-top: 20px;
+    width: 60%;
+}
+
+.picture img {
+    width: 280px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and small desktops */
+@media (max-width: 992px) {
+    .about-me {
+        flex-direction: row;
+        padding: 3rem 3rem 1.5rem 3rem;
+    }
+
+    .description, .picture {
+        width: 45%; /* Slightly reduce width to accommodate padding */
+    }
+
+    .description h1 {
+        font-size: 2.5rem;
+        width: 80%;
+    }
+
+    .description p {
+        font-size: 1rem;
+        width: 80%;
+    }
+
+    .picture h2, .picture p {
+        font-size: 1.2rem;
+    }
+
+    .picture img {
+        width: 250px;
+        height: 270px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .about-me {
+        flex-direction: column;
+        padding: 3rem 2rem 1.5rem 2rem;
+    }
+
+    .description, .picture {
+        width: 100%;
+        margin-bottom: 2rem; /* Space between sections */
+        text-align: center; /* Center text on mobile */
+    }
+
+    .description h1 {
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .description p {
+        font-size: 0.95rem;
+        width: 100%;
+    }
+
+    .picture h2, .picture p {
+        font-size: 1rem;
+    }
+
+    .picture img {
+        width: 200px;
+        height: 220px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .about-me {
+        padding: 2rem 1rem 1rem 1rem;
+    }
+
+    .description h1 {
+        font-size: 1.8rem;
+    }
+
+    .description p {
+        font-size: 0.9rem;
+    }
+
+    .picture h2, .picture p {
+        font-size: 0.95rem;
+    }
+
+    .picture img {
+        width: 150px;
+        height: 180px;
+    }
+}
+
+.programming-skills-body {
+    width: 100vw; /* Full width */
+    padding: 4rem 2rem; /* Add padding for spacing */
+    background-image: url(pexels-iurii-laimin-78973777-18780588.jpg);
+    background-size: cover;
+    display: flex; /* Flexbox layout */
+    flex-direction: row; /* Row layout */
+    justify-content: space-between; /* Space between sections */
+    align-items: flex-start; /* Align items at the start */
+}
+
+.section1 {
+    flex: 1; /* Take available space */
+    margin-right: 2rem; /* Space between sections */
+}
+
+.section1 h2 {
+    font-size: 2rem; /* Main heading size */
+    line-height: 1.2; /* Line height for readability */
+    color: #49AF73; /* Accent color */
+    margin-bottom: 1rem; /* Space below heading */
+}
+
+.section1 p {
+    font-size: 1.1rem; /* Text size */
+    color: #ffffff; /* Text color */
+    line-height: 1.6; /* Line height for readability */
+}
+
+.section2 {
+    flex: 1; /* Take available space */
+}
+
+.section2 h2 {
+    font-size: 2rem; /* Subheading size */
+    color: #49AF73; /* Accent color */
+    margin-bottom: 1rem; /* Space below subheading */
+    text-align: center;
+}
+.ul
+{
+    display: flex;
+    justify-content: space-around;
+  
+    
+}
+@media (max-width:780px) {
+      .ul
+      {
+        flex-direction: column;
+       
+      }
+}
+@media (max-width:480px) {
+     .programming-skills-body
+     {
+        flex-direction: column;
+
+     }
+     .section2 h2 
+     {
+        text-align: left;
+     }
+}
+
+.section2 ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.section2 li {
+    font-size: 1.2rem; /* Item size */
+    color: #ffffff; /* Item color */
+    padding: 0.5rem 0; /* Space between items */
+    position: relative; /* Positioning for custom bullet */
+}
+
+.section2 li::before {
+    content: "•"; 
+    color: #49AF73; 
+    font-size: 1.5rem; 
+    position: absolute; 
+    left: -1rem; 
+}
+
+.languages {
+    /* width: 100vw;
+    padding: 2rem 4rem 2rem 4rem;
+    background-image: url(pexels-pixabay-66284.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center; */width: 100%;
+    text-align: center;
+    padding: 3rem 1rem; /* Added padding for better spacing */
+    background-image: url(pexels-pixabay-66284.jpg);
+    background-size: cover;
+  
+
+}
+
+.languages .heading
+{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.languages .heading h1
+{
+    color: #49AF73;
+   font-size: 2.5rem;
+}
+/* Experience Section Styling */
+.experience {
+    width: 100%;
+    text-align: center;
+    padding: 3rem 1rem;
+    background-image: url(pexels-slendyalex-3648850.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.experience p {
+    font-size: 1.1rem; /* Subheading size */
+    margin-bottom: 2rem; /* Space below paragraph */
+    color: #ffffff; /* Slightly lighter color for the paragraph */
+}
+
+/* Container for Experience Items */
+.experience-container {
+    display: flex; /* Flexbox layout for children */
+    justify-content: center; /* Center items horizontally */
+    gap: 2rem; /* Space between items */
+    flex-wrap: wrap; /* Allow wrapping of items */
+}
+
+.experience-item {
+    display: flex; /* Flexbox layout for items */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items */
+    max-width: 400px; /* Set a max-width for the item */
+    width: 100%; /* Full width for smaller screens */
+    padding: 1rem; /* Padding for inner spacing */
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #333; /* Dark background for contrast */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.experience-item:hover {
+    transform: translateY(-10px); /* Slight hover effect */
+}
+
+.experience-details {
+    text-align: left; /* Align text to the left */
+}
+
+.experience-details h2 {
+    font-size: 1.8rem; /* Size of the section headings */
+    color: #49AF73; /* Accent color for headings */
+    margin-bottom: 1rem; /* Space below the section heading */
+}
+
+.experience-details p {
+    font-size: 1rem; /* Normal paragraph text size */
+    margin-bottom: 0.5rem; /* Space between paragraphs */
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* Optional: Media query for responsive design */
+@media (max-width: 768px) {
+    .experience-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+    
+    .experience-item {
+        max-width: 90%; /* Allow for more width on smaller screens */
+    }
+}
+
+/* Projects Section Styling */
+.projects {
+    background: #ffffff;
+    width: 100%;
+    padding: 50px 20px;
+     /* background-image: url(pexels-pixabay-159298.jpg);
+     background-size: cover; */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1c1c1d;
+  
+    margin-bottom: 30px;
+    
+}
+
+.projects-grid {
+   
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    
+    
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.9);
+}
+
+.project-icon {
+    font-size: 3rem;
+    color: #49AF73;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #49AF73;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #3c8f5b;
+}
+
+
+  
+
+/* Overall styling for the contact section */
+.contact-me {
+    width: 100%;
+    padding: 3rem 1rem;
+    background-color: #f4f4f4;
+    background-image: url("/frontend/pexels-geri-tech-3769679-14158913-fotor-20241116201458.jpg");
+    background-size: contain;
+   
+}
+
+/* Wrapper to hold both text and form sections */
+.contact-me-zero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left side - Contact information */
+.contact-me-one {
+    width: 40%;
+    text-align: left;
+    color: #ffffff
+}
+
+/* Heading styling */
+.contact-me-one h1 {
+    font-size: 2.5rem;
+    color: #49AF73;
+    margin-bottom: 1rem;
+}
+
+/* Paragraph text styling */
+.contact-me-one p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+/* Social media link styling */
+.contact-me-one .media-links a {
+    font-size: 2rem;
+    color:#49AF73;
+    margin-right: 20px;
+    transition: all 0.3s ease;
+}
+
+.contact-me-one .media-links a:hover {
+    color: #ffffff;
+}
+
+/* Right side - Form section */
+.contact-me-two {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Form elements styling */
+.contact-me-two input[type="text"],
+.contact-me-two input[type="email"],
+.contact-me-two textarea {
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Focus effect for input fields */
+.contact-me-two input[type="text"]:focus,
+.contact-me-two input[type="email"]:focus,
+.contact-me-two textarea:focus {
+    border-color: #49AF73;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(73, 175, 115, 0.3);
+}
+
+/* Placeholder text styling */
+.contact-me-two input::placeholder,
+.contact-me-two textarea::placeholder {
+    color: #bbb;
+    font-size: 16px;
+}
+
+/* Textarea specific styling */
+.contact-me-two textarea {
+    height: 200px;
+    padding-top: 15px;
+    resize: vertical; /* Allow resizing vertically only */
+}
+
+/* Button styling */
+.contact-me-two button {
+    padding: 12px 30px;
+    background-color: #49AF73;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    width: 150px;  /* Set a fixed width for the button */
+    align-self: center;  /* Centers the button horizontally */
+    position: relative;
+     left: 10rem;
+
+}
+
+/* Hover effect for button */
+.contact-me-two button:hover {
+    background-color: #6ddb9a;
+    transform: scale(1.03);
+}
+
+/* Responsive Design - Medium Screens (Tablets) */
+@media screen and (max-width: 768px) {
+    .contact-me-zero {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-me-one, .contact-me-two {
+        width: 100%;  /* Both sections will take full width */
+    }
+
+    .contact-me-two input[type="text"],
+    .contact-me-two input[type="email"],
+    .contact-me-two textarea,
+    .contact-me-two button {
+        max-width: 90%;  /* Ensures the form fields scale down appropriately */
+    }
+}
+
+/* Responsive Design - Small Screens (Mobile) */
+@media screen and (max-width: 480px) {
+    .contact-me-one h1 {
+        font-size: 2rem;
+    }
+
+    .contact-me-one p {
+        font-size: 1rem;
+    }
+
+    .contact-me-two {
+        padding: 1.5rem;
+    }
+
+    .contact-me-two input[type="text"],
+    .contact-me-two input[type="email"],
+    .contact-me-two textarea {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .contact-me-two button {
+        font-size: 16px;
+        padding: 10px 25px;
+    }
+}
+
+
+.footer {
+    width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    background-color: #000000;
+    padding: 3rem 1rem;
+    color: #49AF73;
+}
+
+.place1{
+    justify-content:center;
+    
+}
